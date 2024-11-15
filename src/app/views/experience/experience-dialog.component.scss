@@ -1,0 +1,16 @@
+::ng-deep .experience-dialog {
+  .mat-mdc-dialog-container {
+    padding: 0;
+    background: rgb(51, 65, 85) !important; /* slate-700 instead of slate-800 */
+  }
+
+  .mdc-dialog__surface {
+    background-color: rgb(51, 65, 85) !important; /* slate-700 */
+    box-shadow: 0 0 25px rgba(20, 184, 166, 0.1) !important; /* increased teal glow effect */
+  }
+}
+
+:host {
+  display: block;
+  width: 100%;
+} 

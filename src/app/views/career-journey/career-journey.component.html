@@ -1,0 +1,29 @@
+<section class="py-12">
+    <h2 class="text-4xl font-bold mb-8 text-slate-200">Career Journey</h2>
+    
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-slate-700/50"></div>
+      
+      <!-- Career steps -->
+      <div class="space-y-12">
+        <div *ngFor="let step of careerSteps" 
+             class="relative flex items-center group">
+          <!-- Timeline number -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-slate-800 border-2 border-teal-400 flex items-center justify-center text-teal-400 font-bold text-sm transition-all duration-300 group-hover:bg-teal-400 group-hover:text-slate-800">
+            {{ step.number }}
+          </div>
+          
+          <!-- Content -->
+          <div class="w-1/2" [class.pr-8]="step.number % 2 === 1" [class.pl-8]="step.number % 2 === 0" 
+               [class.ml-auto]="step.number % 2 === 0">
+            <div class="bg-slate-800/80 backdrop-blur-sm p-5 rounded-lg transition-all duration-300 hover:bg-slate-700/90 hover:shadow-lg hover:shadow-teal-500/10 transform hover:scale-[1.02] cursor-pointer">
+              <div class="text-teal-400 mb-1">{{ step.year }}</div>
+              <h3 class="text-xl font-bold text-teal-400 mb-2">{{ step.company }}</h3>
+              <p class="text-slate-300">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

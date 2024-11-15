@@ -1,0 +1,22 @@
+<section class="py-12">
+  <h2 class="text-4xl font-bold mb-8 text-slate-200">Skills</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div *ngFor="let category of skillCategories" 
+         class="backdrop-blur-sm bg-slate-800/80 border-slate-700/50 rounded-lg overflow-hidden transition-all duration-300 hover:bg-slate-700/90 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-500/10">
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <i [class]="category.iconClass + ' text-teal-400'"></i>
+          <h3 class="text-xl font-semibold text-slate-200">{{ category.name }}</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span *ngFor="let skill of category.skills"
+                class="px-3 py-1 bg-[#234E52] text-teal-400 rounded text-sm hover:bg-[#285E61] transition-colors duration-300">
+            {{ skill }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,14 @@
+<section id="projects" class="py-12">
+  <h2 class="text-3xl font-bold mb-6 text-teal-400 dark:text-teal-600">Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div 
+      *ngFor="let project of projects"
+      class="bg-slate-800/80 border-slate-700/50 backdrop-blur-sm transition-all duration-300 hover:bg-slate-700/90 hover:border-teal-400/50 hover:shadow-lg hover:shadow-teal-500/10 dark:bg-slate-800/80 dark:border-slate-700/50 dark:hover:bg-slate-700/90 dark:hover:border-teal-600/50 dark:hover:shadow-lg dark:hover:shadow-teal-500/10"
+    >
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2 text-white dark:text-slate-200">{{ project.title }}</h3>
+        <p class="text-slate-300 dark:text-slate-400">{{ project.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

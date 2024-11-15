@@ -1,0 +1,14 @@
+.experience-card {
+  transition: transform 0.2s;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// If you need to prevent body scrolling when modal is open
+:host {
+  &:has(.modal-open) {
+    overflow: hidden;
+  }
+}
