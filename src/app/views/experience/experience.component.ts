@@ -13,9 +13,7 @@ interface Experience {
 
 @Component({
   selector: 'app-experience',
-  standalone: true,
   templateUrl: './experience.component.html',
-  imports: [NgFor]
 })
 export class ExperienceComponent {
   experiences: Experience[] = [

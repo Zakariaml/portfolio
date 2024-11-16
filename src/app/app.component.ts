@@ -1,28 +1,44 @@
-import { Component, Directive } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { IntroComponent } from "./views/intro/intro.component";
-import { KeyConceptComponent } from "./views/key-concept/key-concept.component";
-import { ExperienceComponent } from "./views/experience/experience.component";
-import { CareerJourneyComponent } from "./views/career-journey/career-journey.component";
-import { SkillsComponent } from "./views/skills/skills.component";
-import { ContactComponent } from "./views/contact/contact.component";
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { inject } from '@angular/core';
+import { WelcomeDialogComponent } from './views/welcome-dialog/welcome-dialog.component';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    IntroComponent, KeyConceptComponent, ExperienceComponent, CareerJourneyComponent, SkillsComponent, ContactComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.less'
+  styleUrl: './app.component.less',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('500ms ease-out', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Zakaria MILOUDI Portfolio';
   isDarkMode = true;
   currentYear = new Date().getFullYear();
   isSidenavOpen = false;
+  private dialog = inject(MatDialog);
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.showWelcomeDialog();
+    }, 2500);
+  }
+
+  private showWelcomeDialog(): void {
+    this.dialog.open(WelcomeDialogComponent, {
+      width: '560px',
+      panelClass: 'welcome-dialog',
+      disableClose: false,
+      backdropClass: 'backdrop-blur-sm',
+      hasBackdrop: true
+    });
+  }
 
   toggleSidenav() {
     this.isSidenavOpen = !this.isSidenavOpen;

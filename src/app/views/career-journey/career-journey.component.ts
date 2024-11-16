@@ -11,8 +11,6 @@ interface CareerStep {
 @Component({
   selector: 'app-career-journey',
   templateUrl: './career-journey.component.html',
-  imports: [NgFor],
-  standalone: true
 })
 export class CareerJourneyComponent {
   careerSteps: CareerStep[] = [

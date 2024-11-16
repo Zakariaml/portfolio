@@ -3,3 +3,28 @@
 @tailwind utilities; 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Add these styles to your global styles */
+.welcome-dialog .mat-mdc-dialog-container {
+  padding: 0;
+}
+
+.welcome-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.welcome-dialog .mat-mdc-dialog-container .mdc-dialog__content {
+  padding: 0 !important;
+}
+
+/* Style for the backdrop overlay */
+.welcome-dialog .mat-dialog-container {
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(2, 6, 23, 0.95) !important;
+}

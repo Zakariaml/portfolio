@@ -9,8 +9,6 @@ interface Project {
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  imports: [NgFor],
-  standalone: true
 })
 export class ProjectsComponent {
   projects: Project[] = [

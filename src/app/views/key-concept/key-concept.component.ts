@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-key-concept',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './key-concept.component.html',
   styleUrl: './key-concept.component.less'
 })

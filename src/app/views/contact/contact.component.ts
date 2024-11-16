@@ -10,8 +10,6 @@ interface ContactLink {
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  imports: [CommonModule],
-  standalone: true
 })
 export class ContactComponent {
   contacts: ContactLink[] = [

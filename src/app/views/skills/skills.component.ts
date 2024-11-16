@@ -11,8 +11,6 @@ interface SkillCategory {
   selector: 'app-skills',
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss'],
-  imports: [NgFor],
-  standalone: true
 })
 export class SkillsComponent {
   skillCategories: SkillCategory[] = [
