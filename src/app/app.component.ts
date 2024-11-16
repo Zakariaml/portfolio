@@ -12,6 +12,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { LoadingAnimationComponent } from './views/loading-animation/loading-animation.component';
 import { LoadingService } from './services/loading.service';
 import { filter } from 'rxjs';
+import { StorageService } from './services/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +42,8 @@ export class AppComponent implements OnInit{
 
   constructor(
     private dialog: MatDialog,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private storageService: StorageService
   ) {}
 
   toggleSidenav() {
@@ -52,7 +54,7 @@ export class AppComponent implements OnInit{
     // Reset states
     this.dialogShown = false;
     this.showContent = false;
-    localStorage.removeItem('welcomeDialogShown'); // Reset localStorage on init
+    this.storageService.removeItem('welcomeDialogShown');
     
     this.loadingService.loadingComplete$
       .subscribe(isComplete => {
@@ -60,12 +62,11 @@ export class AppComponent implements OnInit{
           this.dialogShown = true;
           this.showContent = true;
           
-          // Check if dialog has been shown in this session
-          const dialogShown = localStorage.getItem('welcomeDialogShown');
+          const dialogShown = this.storageService.getItem('welcomeDialogShown');
           if (!dialogShown) {
             setTimeout(() => {
               this.showWelcomeDialog();
-              localStorage.setItem('welcomeDialogShown', 'true');
+              this.storageService.setItem('welcomeDialogShown', 'true');
             }, 300);
           }
         }
@@ -73,7 +74,7 @@ export class AppComponent implements OnInit{
   }
 
   private showWelcomeDialog(): void {
-    if (localStorage.getItem('welcomeDialogShown')) return;
+    if (this.storageService.getItem('welcomeDialogShown')) return;
     
     this.dialog.open(WelcomeDialogComponent, {
       width: '560px',

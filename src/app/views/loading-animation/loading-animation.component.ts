@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { LoadingService } from '../../services/loading.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-loading-animation',
@@ -38,12 +39,15 @@ export class LoadingAnimationComponent implements OnInit, OnDestroy {
   isLoading = true;
   progressState = 'void';
 
-  constructor(private loadingService: LoadingService) {
+  constructor(
+    private loadingService: LoadingService,
+    private storageService: StorageService
+  ) {
     this.loadingService.setLoadingComplete(false);
   }
 
   ngOnInit() {
-    localStorage.removeItem('welcomeDialogShown');
+    this.storageService.removeItem('welcomeDialogShown');
     
     setTimeout(() => {
       this.progressState = 'full';
