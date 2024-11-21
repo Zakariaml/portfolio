@@ -1,4 +1,5 @@
 import { Component, Directive, OnInit } from '@angular/core';
+import { Component, Directive, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IntroComponent } from "./views/intro/intro.component";
 import { KeyConceptComponent } from "./views/key-concept/key-concept.component";
@@ -15,7 +16,15 @@ import { trigger, transition, style, animate, state } from '@angular/animations'
   imports: [
     CommonModule,
     RouterOutlet,
-    IntroComponent, KeyConceptComponent, ExperienceComponent, CareerJourneyComponent, SkillsComponent, ContactComponent],
+    IntroComponent, 
+    KeyConceptComponent, 
+    ExperienceComponent, 
+    CareerJourneyComponent, 
+    SkillsComponent, 
+    ContactComponent,
+    LoadingAnimationComponent,
+    MatDialogModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less',
   animations: [

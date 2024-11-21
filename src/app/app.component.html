@@ -1,4 +1,6 @@
-<div class="h-[5px] bg-teal-400"></div>
+<app-loading-animation>
+  <div [@fadeIn] *ngIf="showContent">
+    <div class="h-[5px] bg-teal-400"></div>
 
 <div *ngIf="isLoading" class="fixed inset-0 flex items-center justify-center bg-[#0A192F] z-50">
   <div class="text-center">
@@ -44,14 +46,16 @@
     </main>
   </div>
 
-  <div class="w-full bg-[#0A192F] mt-12">
-    <app-contact></app-contact>
-  </div>
+      <div class="w-full bg-[#0A192F] mt-12">
+        <app-contact></app-contact>
+      </div>
 
-  <footer class="w-full bg-[#0A192F] border-t border-slate-800">
-    <div class="container mx-auto px-4 py-6 text-center text-slate-400 max-w-6xl">
-      <div class="mb-2">Designed & Built with ❤️</div>
-      <div>© {{ currentYear }} Zakaria MILOUDI. All rights reserved.</div>
+      <footer class="w-full bg-[#0A192F] border-t border-slate-800">
+        <div class="container mx-auto px-4 py-6 text-center text-slate-400 max-w-6xl">
+          <div class="mb-2">Designed & Built with ❤️</div>
+          <div>© {{ currentYear }} Zakaria MILOUDI. All rights reserved.</div>
+        </div>
+      </footer>
     </div>
-  </footer>
-</div>
+  </div>
+</app-loading-animation>

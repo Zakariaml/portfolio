@@ -1,0 +1,21 @@
+<ng-container>
+  <div *ngIf="isLoading" 
+       [@fadeInOut]
+       class="fixed inset-0 z-50 flex items-center justify-center bg-[#0a192f]">
+    <div class="text-center">
+      <div [@scaleIn]
+           class="mb-4 text-[#64ffda] text-4xl font-bold">
+        ZM
+      </div>
+      <div class="relative w-[200px] h-0.5 bg-[#1e293b]">
+        <div [@progressBar]="progressState"
+             class="absolute top-0 left-0 h-full bg-[#64ffda]">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-container *ngIf="!isLoading">
+    <ng-content></ng-content>
+  </ng-container>
+</ng-container>

@@ -1,5 +1,43 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@tailwind utilities;
+
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+/* Dialog Styles */
+.welcome-dialog .mat-mdc-dialog-container {
+  padding: 0;
+}
+
+.welcome-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.welcome-dialog .mat-mdc-dialog-container .mdc-dialog__content {
+  padding: 0 !important;
+}
+
+.welcome-dialog .mat-dialog-container {
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Backdrop Styles */
+.cdk-overlay-dark-backdrop {
+  background: rgba(2, 6, 23, 0.95) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.welcome-dialog-backdrop {
+  background: rgba(10, 25, 47, 0.8) !important;
+  backdrop-filter: blur(10px) !important; /* More blur */
+}
