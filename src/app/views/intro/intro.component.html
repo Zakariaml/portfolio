@@ -5,7 +5,13 @@
       <p class="text-base mb-4 text-slate-300">I am a software engineer with a focus on the .NET ecosystem. My expertise includes working with technologies like C#, ASP.NET, MVC, Web APIs, and SQL Server. I am passionate about delivering high-quality solutions, leveraging Agile methodologies, and working collaboratively with my team to drive innovation.</p>
       <p class="text-base mb-4 text-slate-300">Feel free to connect with me to discuss opportunities, share insights, or simply expand our professional networks!</p>
       <p class="text-lg mb-8 text-slate-300">Looking forward to connecting with you!</p>
-      <button class="bg-teal-500 hover:bg-teal-600 text-white transition-colors px-4 py-2 rounded">Download Resume</button>
+      <button (click)="downloadResume()" 
+              class="bg-teal-500 hover:bg-teal-600 text-white transition-colors px-4 py-2 rounded flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download Resume
+      </button>
     </div>
     <div class="md:w-1/2 flex justify-end">
       <img [src]="imageUrl" alt="Zakaria MILOUDI" class="rounded-full border-4 border-teal-400 w-[300px] h-[300px] object-cover">

@@ -6,8 +6,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        // You can add custom colors here if needed
+      keyframes: {
+        progress: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' }
+        }
+      },
+      animation: {
+        'progress': 'progress 1.5s ease-in-out'
       }
     }
   },
