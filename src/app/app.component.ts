@@ -1,5 +1,4 @@
-import { Component, Directive, OnInit } from '@angular/core';
-import { Component, Directive, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IntroComponent } from "./views/intro/intro.component";
 import { KeyConceptComponent } from "./views/key-concept/key-concept.component";
@@ -8,7 +7,7 @@ import { CareerJourneyComponent } from "./views/career-journey/career-journey.co
 import { SkillsComponent } from "./views/skills/skills.component";
 import { ContactComponent } from "./views/contact/contact.component";
 import { CommonModule } from '@angular/common';
-import { trigger, transition, style, animate, state } from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -21,9 +20,7 @@ import { trigger, transition, style, animate, state } from '@angular/animations'
     ExperienceComponent, 
     CareerJourneyComponent, 
     SkillsComponent, 
-    ContactComponent,
-    LoadingAnimationComponent,
-    MatDialogModule
+    ContactComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less',
